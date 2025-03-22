@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerHive - Find Jobs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/job.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">CareerHive</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="job.html">Find Jobs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="post.html">Post a Job</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="ms-lg-3">
+                    <a href="#" class="btn btn-outline-primary me-2">Sign In</a>
+                    <a href="#" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section id="job-header" class="py-5 text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="fw-bold mb-4">Find Your Dream Job</h1>
+                    <p class="lead mb-4">Explore thousands of job opportunities from top companies</p>
+                    <div class="search-container">
+                        <form class="job-search-form">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                <input type="text" class="form-control" placeholder="Job title, skills, or keywords">
+                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                <select class="form-select">
+                                    <option selected>Location</option>
+                                    <option>Remote</option>
+                                    <option>New York</option>
+                                    <option>San Francisco</option>
+                                    <option>London</option>
+                                </select>
+                                <button class="btn btn-primary" type="button">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="filter-container p-3 bg-white rounded shadow-sm">
+                        <div class="d-flex flex-wrap align-items-center">
+                            <div class="filter-label me-3 mb-2 mb-md-0">
+                                <i class="fas fa-filter me-2"></i> Filter by:
+                            </div>
+                            <div class="filter-items d-flex flex-wrap">
+                                <div class="dropdown me-2 mb-2 mb-md-0">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                        id="jobTypeDropdown" data-bs-toggle="dropdown">
+                                        Job Type
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="form-check dropdown-item">
+                                                <input class="form-check-input" type="checkbox" id="fullTimeCheck">
+                                                <label class="form-check-label" for="fullTimeCheck">Full-time</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check dropdown-item">
+                                                <input class="form-check-input" type="checkbox" id="partTimeCheck">
+                                                <label class="form-check-label" for="partTimeCheck">Part-time</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check dropdown-item">
+                                                <input class="form-check-input" type="checkbox" id="contractCheck">
+                                                <label class="form-check-label" for="contractCheck">Contract</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check dropdown-item">
+                                                <input class="form-check-input" type="checkbox" id="remoteCheck">
+                                                <label class="form-check-label" for="remoteCheck">Remote</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown me-2 mb-2 mb-md-0">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                        id="salaryDropdown" data-bs-toggle="dropdown">
+                                        Salary Range
+                                    </button>
+                                    <ul class="dropdown-menu p-3" style="width: 250px;">
+                                        <li>
+                                            <div class="mb-3">
+                                                <label for="minSalary" class="form-label">Min Salary</label>
+                                                <input type="range" class="form-range" id="minSalary" min="0"
+                                                    max="200000" step="5000">
+                                                <div class="d-flex justify-content-between">
+                                                    <small>$0</small>
+                                                    <small>$200k</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="mb-2">
+                                                <label for="maxSalary" class="form-label">Max Salary</label>
+                                                <input type="range" class="form-range" id="maxSalary" min="0"
+                                                    max="200000" step="5000">
+                                                <div class="d-flex justify-content-between">
+                                                    <small>$0</small>
+                                                    <small>$200k</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><button class="btn btn-sm btn-primary w-100">Apply</button></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown me-2 mb-2 mb-md-0">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                        id="experienceDropdown" data-bs-toggle="dropdown">
+                                        Experience
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Entry Level</a></li>
+                                        <li><a class="dropdown-item" href="#">1-3 years</a></li>
+                                        <li><a class="dropdown-item" href="#">3-5 years</a></li>
+                                        <li><a class="dropdown-item" href="#">5-10 years</a></li>
+                                        <li><a class="dropdown-item" href="#">10+ years</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown me-2 mb-2 mb-md-0">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                        id="industryDropdown" data-bs-toggle="dropdown">
+                                        Industry
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Technology</a></li>
+                                        <li><a class="dropdown-item" href="#">Finance</a></li>
+                                        <li><a class="dropdown-item" href="#">Healthcare</a></li>
+                                        <li><a class="dropdown-item" href="#">Education</a></li>
+                                        <li><a class="dropdown-item" href="#">Marketing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown mb-2 mb-md-0">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                        id="datePostedDropdown" data-bs-toggle="dropdown">
+                                        Date Posted
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Last 24 hours</a></li>
+                                        <li><a class="dropdown-item" href="#">Last 3 days</a></li>
+                                        <li><a class="dropdown-item" href="#">Last 7 days</a></li>
+                                        <li><a class="dropdown-item" href="#">Last 14 days</a></li>
+                                        <li><a class="dropdown-item" href="#">Last 30 days</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ms-auto mt-2 mt-md-0">
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="fas fa-times me-1"></i>Clear All
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Listings -->
+    <section id="job-listings" class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h3>Found <span class="text-primary">1,527</span> jobs</h3>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-secondary active">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                    <div class="dropdown d-inline-block ms-2">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown"
+                            data-bs-toggle="dropdown">
+                            Sort By: Relevance
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Relevance</a></li>
+                            <li><a class="dropdown-item" href="#">Date Posted (Newest)</a></li>
+                            <li><a class="dropdown-item" href="#">Salary (Highest)</a></li>
+                            <li><a class="dropdown-item" href="#">Salary (Lowest)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Job 1 -->
+                <div class="col-lg-6">
+                    <div class="job-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-logo me-3">
+                                <img src="/Hackathon/website/Job Hunt/images/technova .png" alt="TechNova Solutions">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Software Engineer</h5>
+                                <p class="mb-0 text-muted">TechNova Solutions</p>
+                            </div>
+                            <div class="ms-auto">
+                                <button class="btn btn-sm btn-outline-primary save-job">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="job-badge bg-primary bg-opacity-10 text-primary">Full-time</span>
+                            <span class="job-badge bg-success bg-opacity-10 text-success">Remote Available</span>
+                        </div>
+                        <div class="d-flex mb-3 job-details">
+                            <div class="me-3">
+                                <i class="fas fa-map-marker-alt text-muted me-1"></i> New York, USA
+                            </div>
+                            <div class="me-3">
+                                <i class="fas fa-money-bill-wave text-muted me-1"></i> $80,000 - $100,000/year
+                            </div>
+                            <div>
+                                <i class="fas fa-calendar-alt text-muted me-1"></i> Posted 2 days ago
+                            </div>
+                        </div>
+                        <p class="job-description">Join our innovative team to develop cutting-edge software solutions.
+                            Strong experience with React, Node.js, and cloud technologies required.</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <a href="#" class="btn btn-primary">Apply Now</a>
+                            <span class="ms-auto text-muted small">24 applicants</span>
+                        </div>
+                        <div class="quick-apply">
+                            <a href="#" class="text-white">Quick Apply <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="col-lg-6">
+                    <div class="job-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-logo me-3">
+                                <img src="images/creative pixles studio.png" alt="Creative Pixel Studios">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">UI/UX Designer</h5>
+                                <p class="mb-0 text-muted">Creative Pixel Studios</p>
+                            </div>
+                            <div class="ms-auto">
+                                <button class="btn btn-sm btn-outline-primary save-job">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="job-badge bg-primary bg-opacity-10 text-primary">Hybrid</span>
+                            <span class="job-badge bg-info bg-opacity-10 text-info">Design</span>
+                        </div>
+                        <div class="d-flex mb-3 job-details">
+                            <div class="me-3">
+                                <i class="fas fa-map-marker-alt text-muted me-1"></i> San Francisco, USA
+                            </div>
+                            <div class="me-3">
+                                <i class="fas fa-money-bill-wave text-muted me-1"></i> $60,000 - $85,000/year
+                            </div>
+                            <div>
+                                <i class="fas fa-calendar-alt text-muted me-1"></i> Posted 3 days ago
+                            </div>
+                        </div>
+                        <p class="job-description">Create exceptional user experiences for web and mobile applications.
+                            Proficiency in Figma, Adobe XD, and prototyping tools required.</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <a href="#" class="btn btn-primary">Apply Now</a>
+                            <span class="ms-auto text-muted small">18 applicants</span>
+                        </div>
+                        <div class="quick-apply">
+                            <a href="#" class="text-white">Quick Apply <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="col-lg-6">
+                    <div class="job-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-logo me-3">
+                                <img src="/Hackathon/website/Job Hunt/images/insight analytics.png" alt="Insight Analytics">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Data Analyst</h5>
+                                <p class="mb-0 text-muted">Insight Analytics</p>
+                            </div>
+                            <div class="ms-auto">
+                                <button class="btn btn-sm btn-outline-primary save-job">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="job-badge bg-primary bg-opacity-10 text-primary">Full-time</span>
+                            <span class="job-badge bg-warning bg-opacity-10 text-warning">Analytics</span>
+                        </div>
+                        <div class="d-flex mb-3 job-details">
+                            <div class="me-3">
+                                <i class="fas fa-map-marker-alt text-muted me-1"></i> London, UK
+                            </div>
+                            <div class="me-3">
+                                <i class="fas fa-money-bill-wave text-muted me-1"></i> £45,000 - £65,000/year
+                            </div>
+                            <div>
+                                <i class="fas fa-calendar-alt text-muted me-1"></i> Posted 1 week ago
+                            </div>
+                        </div>
+                        <p class="job-description">Analyze and interpret complex data sets to drive business decisions.
+                            Experience with SQL, Python, and data visualization tools essential.</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <a href="#" class="btn btn-primary">Apply Now</a>
+                            <span class="ms-auto text-muted small">32 applicants</span>
+                        </div>
+                        <div class="quick-apply">
+                            <a href="#" class="text-white">Quick Apply <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="col-lg-6">
+                    <div class="job-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-logo me-3">
+                                <img src="/Hackathon/website/Job Hunt/images/growthhack media .png" alt="GrowthHack Media">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Digital Marketing Specialist</h5>
+                                <p class="mb-0 text-muted">GrowthHack Media</p>
+                            </div>
+                            <div class="ms-auto">
+                                <button class="btn btn-sm btn-outline-primary save-job">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="job-badge bg-primary bg-opacity-10 text-primary">Contract</span>
+                            <span class="job-badge bg-danger bg-opacity-10 text-danger">Marketing</span>
+                        </div>
+                        <div class="d-flex mb-3 job-details">
+                            <div class="me-3">
+                                <i class="fas fa-map-marker-alt text-muted me-1"></i> Berlin, Germany
+                            </div>
+                            <div class="me-3">
+                                <i class="fas fa-money-bill-wave text-muted me-1"></i> €50,000 - €70,000/year
+                            </div>
+                            <div>
+                                <i class="fas fa-calendar-alt text-muted me-1"></i> Posted 5 days ago
+                            </div>
+                        </div>
+                        <p class="job-description">Plan and execute digital marketing campaigns across multiple
+                            channels. Skills in SEO, SEM, and social media marketing required.</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <a href="#" class="btn btn-primary">Apply Now</a>
+                            <span class="ms-auto text-muted small">29 applicants</span>
+                        </div>
+                        <div class="quick-apply">
+                            <a href="#" class="text-white">Quick Apply <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="col-lg-6">
+                    <div class="job-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-logo me-3">
+                                <img src="/Hackathon/website/Job Hunt/images/codecrafters.png" alt="CodeCrafters Inc">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Front-End Developer</h5>
+                                <p class="mb-0 text-muted">CodeCrafters Inc.</p>
+                            </div>
+                            <div class="ms-auto">
+                                <button class="btn btn-sm btn-outline-primary save-job">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="job-badge bg-primary bg-opacity-10 text-primary">Full-time</span>
+                            <span class="job-badge bg-success bg-opacity-10 text-success">Development</span>
+                        </div>
+                        <div class="d-flex mb-3 job-details">
+                            <div class="me-3">
+                                <i class="fas fa-map-marker-alt text-muted me-1"></i> Toronto, Canada
+                            </div>
+                            <div class="me-3">
+                                <i class="fas fa-money-bill-wave text-muted me-1"></i> CAD 70,000 - CAD 90,000/year
+                            </div>
+                            <div>
+                                <i class="fas fa-calendar-alt text-muted me-1"></i> Posted 2 days ago
+                            </div>
+                        </div>
+                        <p class="job-description">Develop responsive and accessible web interfaces. Experience with
+                            HTML, CSS, JavaScript, and modern frameworks like React required.</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <a href="#" class="btn btn-primary">Apply Now</a>
+                            <span class="ms-auto text-muted small">41 applicants</span>
+                        </div>
+                        <div class="quick-apply">
+                            <a href="#" class="text-white">Quick Apply <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 6 -->
+                <div class="col-lg-6">
+                    <div class="job-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="company-logo me-3">
+                                <img src="/Hackathon/website/Job Hunt/images/securetech .png" alt="SecureTech Global">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Cybersecurity Analyst</h5>
+                                <p class="mb-0 text-muted">SecureTech Global</p>
+                            </div>
+                            <div class="ms-auto">
+                                <button class="btn btn-sm btn-outline-primary save-job">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="job-badge bg-primary bg-opacity-10 text-primary">Full-time</span>
+                            <span class="job-badge bg-info bg-opacity-10 text-info">Security</span>
+                        </div>
+                        <div class="d-flex mb-3 job-details">
+                            <div class="me-3">
+                                <i class="fas fa-map-marker-alt text-muted me-1"></i> Sydney, Australia
+                            </div>
+                            <div class="me-3">
+                                <i class="fas fa-money-bill-wave text-muted me-1"></i> AUD 90,000 - AUD 110,000/year
+                            </div>
+                            <div>
+                                <i class="fas fa-calendar-alt text-muted me-1"></i> Posted 1 week ago
+                            </div>
+                        </div>
+                        <p class="job-description">Monitor and protect systems from cybersecurity threats. Skills in
+                            threat detection, incident response, and security tools required.</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <a href="#" class="btn btn-primary">Apply Now</a>
+                            <span class="ms-auto text-muted small">15 applicants</span>
+                        </div>
+                        <div class="quick-apply">
+                            <a href="#" class="text-white">Quick Apply <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="d-flex justify-content-center mt-5">
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Alert -->
+    <section id="job-alert" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="alert-card py-5 px-4">
+                        <h3 class="mb-3">Get new jobs matching your preferences directly to your inbox</h3>
+                        <p class="text-muted mb-4">Stay updated with the latest opportunities. Set your preferences and
+                            we'll do the rest.</p>
+                        <form class="job-alert-form">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                                <button class="btn btn-primary" type="submit">Create Job Alert</button>
+                            </div>
+                        </form>
+                        <p class="small text-muted mt-3">By clicking "Create Job Alert", you agree to our Terms and
+                            Privacy Policy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">CareerHive</h5>
+                    <p>Connecting talented professionals with their dream jobs since 2025.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Find Jobs</a></li>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Ahmedabad Institute of technology</li>
+                        <li><i class="fas fa-phone"></i>0000000000</li>
+                        <li><i class="fas fa-envelope"></i> Careerhive@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe for job alerts and career tips</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 CareerHive. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
