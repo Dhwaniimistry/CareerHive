@@ -4,7 +4,7 @@ At "CareerHive", our mission is to seamlessly connect job seekers and job provid
 
 1. The Solution Challenger - VEDANT BHAVSAR
 
-VEDANT is the critical thinker of our team, always questioning and pushing boundaries to find the most effective solutions. With his sharp analytical skills and problem-solving mindset, she ensures CareerHive addresses real-world hiring challenges. His dedication to understanding user pain points helps us continuously refine and enhance the platform, ensuring a seamless experience for both job seekers and employers.
+VEDANT is the critical thinker of our team, always questioning and pushing boundaries to find the most effective solutions. With his sharp analytical skills and problem-solving mindset, he ensures CareerHive addresses real-world hiring challenges. His dedication to understanding user pain points helps us continuously refine and enhance the platform, ensuring a seamless experience for both job seekers and employers.
 
 2. Research and Web Dev Expert - DHRUVIL MODI
 
